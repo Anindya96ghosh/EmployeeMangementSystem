@@ -8,7 +8,6 @@ import com.ems.service.EmployeeService;
 public class AppController implements Controller {
 	
 	EmployeeService empService;
-	//= new EmployeeService();
 
 	@Override
 	public void addEmployee(Employee e) throws IOException {

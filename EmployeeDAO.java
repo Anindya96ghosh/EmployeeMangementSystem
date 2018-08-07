@@ -14,20 +14,19 @@ public class EmployeeDAO {
 	Set<Employee> employeeSet=new LinkedHashSet<>();
 	
 	
-	
+	//logic to add an employee to the set
 	public void addEmployee(Employee emp) throws IOException {
 
 		employeeSet.add(emp);
-		//System.out.println("yoyoyoyoyo");
 	}
 	
+	////logic to view the set of employees 
 	public void viewAllEmployee() {
-		//System.out.println("yoyoyo");
 		
 		employeeSet.stream().forEach(System.out::println);
 	}
 	
-	
+	//logic to find an employee from the set on the basis of empID
 	public void getEmployeeByID(int empID) {
 		
 		Employee employee=null;
@@ -38,25 +37,14 @@ public class EmployeeDAO {
 				employee=emp;
 				System.out.println(employee);
 			}
-		}
-		//return employee;
-		
+		}	
 	}
 	
-	
+	//logic to delete an employee from the set
 	public void deleteEmployee(int empID) {
 		
 		Predicate<Employee> delEmp =Employee-> Employee.getEmpID()==(empID);
 		employeeSet.removeIf(delEmp);
-		
-//		
-//		for(Employee emp:employeeSet)
-//		{
-//			if(emp.getEmpID()==empID)
-//			{
-//				employeeSet.remove(emp);
-//			}
-//		}
 	}
 	
 }

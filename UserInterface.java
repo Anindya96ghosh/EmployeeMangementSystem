@@ -16,25 +16,29 @@ public class UserInterface {
 	{
 		acceptData();
 	}
+	
+	//implementng the .xml file 
 	ApplicationContext context= new ClassPathXmlApplicationContext("contextproperty.xml");
 
 	AppController appControl= (AppController) context.getBean("controller");
-	//=new AppController();
+	
 	Scanner scanner= new Scanner(System.in);
+	//function to accept data from user
 	public void acceptData() throws IOException
 	{
 		Employee employee= new Employee();
 		
-		
-		for(int i=0;i<2;i++)
+		//Passing the value of name and salary of the employee via constructor
+		for(int i=0;i<5;i++)
 		{
-			System.out.println("Enter the name,id and salary of the employee");
-			employee= new Employee(scanner.next(),scanner.nextInt(),scanner.nextInt());
+			System.out.println("Enter the name and salary of the employee");
+			employee= new Employee(scanner.next(),scanner.nextInt());
 			appControl.addEmployee(employee);
 		}
 		
 		displayData();
 		
+		//to delete a particular user
 		System.out.println("Enter the EmployID of the employee to be deleted");
 		appControl.deleteEmployee(scanner.nextInt());
 		

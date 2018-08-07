@@ -12,7 +12,7 @@ public class TestClass {
 		try {
 			new UserInterface();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}
